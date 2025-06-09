@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./app # Points to 'app/' directory
+      dockerfile: Dockerfile
+    container_name: react-app
+    volumes:
+      - ./app:/app # Mount 'app/' as /app inside container
+      - ./app/node_modules:/app/node_modules
+    working_dir: /app
+    ports:
+      - "3000:3000" # Expose on port 3000
+    stdin_open: true
+    tty: true
+
+
