@@ -1,0 +1,98 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 8px;
+  transition: 0.2s linear;
+  cursor: pointer;
+
+  &:hover {
+    margin-top: -5px;
+    margin-bottom: 5px;
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to top, #18392b 10%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    .price {
+      font-weight: 600;
+      font-size: 30px;
+      margin-bottom: 0.5rem;
+    }
+    .hirePeriod {
+      color: #85aa9b;
+    }
+    .top {
+      margin-top: -1rem;
+      margin-right: -1rem;
+      .flex {
+        display: flex;
+        align-items: center;
+        .bullet {
+          margin-left: auto;
+          padding: 0.5rem;
+          background-color: #18392b;
+          font-weight: 600;
+          font-size: 18px;
+          border-radius: 8px;
+        }
+        .radio {
+          height: 30px;
+          width: 30px;
+          border-radius: 100%;
+          margin-left: 0.5rem;
+          background-color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #85aa9b;
+          &.active {
+            border-color: #18392b;
+          }
+          svg {
+            height: 16px;
+            color: #18392b;
+          }
+        }
+      }
+
+      .warning {
+        width: fit-content;
+        margin-top: 0.5rem;
+        margin-left: -1rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        color: rgb(234 179 8);
+        font-size: 16;
+        svg {
+          color: rgb(234 179 8);
+          height: 16px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 76px;
+  }
+}
